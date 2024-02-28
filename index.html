@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost lg:text-2xl font-extrabold">Buy Phone</a>
+      </div>
+      <div class="flex-none gap-2">
+        <div class="form-control">
+          <input id="search-field" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+        </div>
+        <div>
+          <button onclick="searchHandle()" class="btn bg-green-600 text-white">Search</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div id="loading" class="text-center hidden">
+        <span class="loading loading-dots loading-lg"></span>
+      </div>
+      <div id="phone-container" class="grid grid-cols-1 lg:grid-cols-3 gap-6 mx-4 lg:mx-40">
+        <!-- all phone card will show from this container  -->
+      </div>
+      <!-- Show all button -->
+      <div id="show-all-btn" class="hidden text-center mt-6">
+        <button onclick="showAllBtn()" class="btn btn-accent text-white">Show All</button>
+      </div>
+
+      <!-- You can open the modal using ID.showModal() method -->
+      <dialog id="my_modal_3" class="modal">
+        <div class="modal-box">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+          </form>
+          <div id="modal_image_container"></div>
+          <h3 class="font-bold text-2xl modal_phone_name pb-4"></h3>
+          <div id="modal_phone_details"></div>
+        </div>
+      </dialog>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
